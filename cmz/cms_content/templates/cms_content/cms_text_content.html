@@ -1,0 +1,11 @@
+{% if content %}
+{{ content.content }}
+{% else %}
+<div class="alert alert-info">
+    <p class="lead">
+        Content <b>{{key}}</b> does not exists!
+    </p>
+    Go to the admin and create a TextContent with key <b>{{key}}</b> <br>
+    This will one day will be a link or even an inline editing interface.
+</div>
+{% endif %}
