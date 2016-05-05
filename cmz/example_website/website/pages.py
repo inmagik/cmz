@@ -3,7 +3,7 @@
 SITE_PAGES = {
     
     'home' : {
-        'url' : 'home',
+        'url' : '',
     },
 
     'news' : {
