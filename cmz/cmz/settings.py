@@ -11,9 +11,18 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+WEBSITE_PATH = os.getenv("CMZ_WEBSITE_PATH")
+
+#TODO: REMOVE ME! THIS IS FOR EARLY DEVELOPMENT STAGE
+if not WEBSITE_PATH:
+    WEBSITE_PATH = os.path.join(BASE_DIR, "example_website")
+
+sys.path.append(WEBSITE_PATH)
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +36,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# Importing modules declared for current website
 from website.settings import SITE_MODULES
 
 
@@ -46,11 +55,9 @@ INSTALLED_APPS = [
 
     'cms_core',
 
-    
 ]
 
 INSTALLED_APPS += SITE_MODULES
-
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,8 +77,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             #os.path.join(BASE_DIR, 'cms_themes'),
-            os.path.join(BASE_DIR, 'website/theme'),
-            os.path.join(BASE_DIR, 'website/templates'),
+            os.path.join(BASE_DIR, WEBSITE_PATH, 'website/theme'),
+            os.path.join(BASE_DIR, WEBSITE_PATH, 'website/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -95,7 +102,7 @@ WSGI_APPLICATION = 'cmz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(WEBSITE_PATH, 'db.sqlite3'),
     }
 }
 
@@ -137,6 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
 
 
 from website.pages import SITE_PAGES

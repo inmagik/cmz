@@ -1,0 +1,2 @@
+recursive-include cms_content *.*
+recursive-include cms_theme_bootstrap *.*
