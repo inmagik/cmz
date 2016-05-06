@@ -5,6 +5,10 @@ Our kick-ass django based cms.
 
 Grab this repo or install from github.
 
+```
+pip install git+ssh://git@github.com/inmagik/cmz.git#egg=cmz
+```
+
 Recommended way: use virtualenv to install and run a website
 
 ## Develop locally
