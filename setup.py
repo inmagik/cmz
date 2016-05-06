@@ -15,7 +15,7 @@ setup(name='cmz',
       packages = find_packages('cmz'),
       package_dir={'':'cmz'},
       include_package_data=True,
-      scripts = ["cmz/bin/cmz_play.py", "cmz/bin/cmz_start.py" ,"cmz/manage.py" ],
+      scripts = ["cmz/bin/cmz_play.py", "cmz/bin/cmz_start.py" , "cmz/bin/cmz_manage.py", "cmz/manage.py" ],
       install_requires=['Django==1.9.5',
       'django-classy-tags==0.7.2', 'django-sekizai==0.9.0', 'wheel==0.26.0'],
 
