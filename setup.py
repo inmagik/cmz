@@ -19,5 +19,5 @@ setup(name='cmz',
       install_requires=['Django==1.9.5',  'django-activelink',
       'django-classy-tags==0.7.2', 'django-sekizai==0.9.0', 'wheel==0.26.0'],
 
-      dependency_links=['https://github.com/gbozee/django-activelink/tarball/c31619ceb0fe16d96adae524fb44a8b135d85597#egg=django_activelink']
+      dependency_links=['git+https://github.com/gbozee/django-activelink.git@c31619ceb0fe16d96adae524fb44a8b135d85597#egg=django_activelink']
     )
