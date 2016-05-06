@@ -1,5 +1,0 @@
-recursive-include cms_core *.*
-recursive-include cms_content *.*
-recursive-include cms_news *.*
-recursive-include cms_theme_bootstrap *.*
-recursive-include example_website *.*

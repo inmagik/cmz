@@ -12,7 +12,7 @@ setup(name='cmz',
       #packages=["cmz.cms_content", "cmz.cms_core", "cmz.cms_news", "cmz.cmz", "cmz.cms_theme_bootstrap"],
       packages = find_packages("."),
       include_package_data=True,
-      scripts = ["cmz_play.py", "cmz_start.py" ,"manage.py" ],
+      scripts = ["cmz/bin/cmz_play.py", "cmz/bin/cmz_start.py" ,"cmz/manage.py" ],
       install_requires=['Django==1.9.5',  'django-activelink',
       'django-classy-tags==0.7.2', 'django-sekizai==0.9.0', 'wheel==0.26.0'],
 
