@@ -145,6 +145,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, WEBSITE_PATH, 'website/static'),
+]
+
 
 
 from website.pages import SITE_PAGES

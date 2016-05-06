@@ -1,5 +1,7 @@
 {% extends "bootstrap/starter.html" %}
+{% load static from staticfiles %}
 {% load cms_content %}
+{% load sekizai_tags %}
 
 {% block page_title %}Home{% endblock %}
 
@@ -22,4 +24,11 @@
 </div><!-- /.container -->
 
 
+{% addtoblock "page_scripts" %}
+<script src="{% static "test.js" %}"></script>
+{% endaddtoblock %}
+
+
 {% endblock %}
+
+
