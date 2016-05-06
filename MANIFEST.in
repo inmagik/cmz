@@ -1,4 +1,4 @@
-recursive-include cms_content *.*
-recursive-include cms_news *.*
-recursive-include cms_theme_bootstrap *.*
-recursive-include example_website *.*
+recursive-include cmz/cms_content *.*
+recursive-include cmz/cms_news *.*
+recursive-include cmz/cms_theme_bootstrap *.*
+recursive-include cmz/example_website *.*
