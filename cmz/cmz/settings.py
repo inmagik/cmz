@@ -18,6 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 WEBSITE_PATH = os.getenv("CMZ_WEBSITE_PATH")
 
+#THIS IS FOR STATIC RENDERING
+CMZ_STATIC_PATH = os.getenv("CMZ_STATIC_PATH")
+
 #TODO: REMOVE ME! THIS IS FOR EARLY DEVELOPMENT STAGE
 if not WEBSITE_PATH:
     WEBSITE_PATH = os.path.join(BASE_DIR, "example_website")
@@ -52,6 +55,7 @@ INSTALLED_APPS = [
 
     'sekizai',
     'activelink',
+    'django_medusa',
 
     'cms_core',
 
@@ -143,11 +147,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = CMZ_STATIC_PATH or '/static/'
+STATIC_ROOT = os.path.join(
+    WEBSITE_PATH,
+    'build',
+    'html',
+    'static'
+)
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, WEBSITE_PATH, 'website/static'),
 ]
+
+
+##medusa
+
+MEDUSA_RENDERER_CLASS = "django_medusa.renderers.DiskStaticSiteRenderer"
+MEDUSA_MULTITHREAD = False
+MEDUSA_DEPLOY_DIR = os.path.join(
+    WEBSITE_PATH,
+    'build',
+    'html'
+)
 
 
 
