@@ -174,6 +174,6 @@ from website.pages import SITE_PAGES
 
 # settings import hook (for server config, etc)
 try:
-    from localsettings_cmz import *
+    from deploy_settings import *
 except ImportError:
     pass
