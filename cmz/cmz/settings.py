@@ -159,7 +159,7 @@ STATICFILES_DIRS = [
 
 
 ##medusa
-
+#TODO: REMOVE ME!
 MEDUSA_RENDERER_CLASS = "django_medusa.renderers.DiskStaticSiteRenderer"
 MEDUSA_MULTITHREAD = False
 MEDUSA_DEPLOY_DIR = os.path.join(
@@ -168,6 +168,12 @@ MEDUSA_DEPLOY_DIR = os.path.join(
     'html'
 )
 
-
-
+# importing cmz pages
 from website.pages import SITE_PAGES
+
+
+# settings import hook (for server config, etc)
+try:
+    from localsettings_cmz import *
+except ImportError:
+    pass
