@@ -13,7 +13,7 @@ def create_urls(pages):
         if page['url']:
             comp_url = r'%s/$' % page['url']
         else:
-            comp_url = r''
+            comp_url = r'^$'
 
         u = url(comp_url, CmsView.as_view(
                 page_name=page_name, extra_modules=extra_modules
