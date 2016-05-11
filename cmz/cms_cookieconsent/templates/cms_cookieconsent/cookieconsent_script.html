@@ -1,0 +1,6 @@
+{% load static from staticfiles %}
+
+<script>
+    window.cookieconsent_options = {{COOKIECONSENT_OPTIONS|safe}};
+</script>
+<script src="{% static "cookieconsent2/build/cookieconsent.min.js" %}"></script>

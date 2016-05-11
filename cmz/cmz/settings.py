@@ -40,7 +40,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Importing modules declared for current website
-from website.settings import SITE_MODULES
+from website.settings import *
 
 
 # Application definition

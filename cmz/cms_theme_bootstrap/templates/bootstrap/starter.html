@@ -53,6 +53,9 @@
     <script src="{% static "bootstrap/starter/js/ie10-viewport-bug-workaround.js" %}"></script>
     {% endblock %}
     
+    
+    {% block override_scripts %}
+    {% endblock %}
     {% render_block "page_scripts" %}
     
 
