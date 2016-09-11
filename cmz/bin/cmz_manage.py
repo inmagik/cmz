@@ -6,7 +6,7 @@ import subprocess
 if __name__ == "__main__":
     env = { "CMZ_WEBSITE_PATH" : os.getcwd() }
     env.update(os.environ)
-    manage_path = "manage.py"
+    manage_path = os.path.abspath("manage.py")
 
 
     subprocess.call([manage_path] + sys.argv[1:],
