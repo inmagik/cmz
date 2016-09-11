@@ -6,10 +6,5 @@ import subprocess
 if __name__ == "__main__":
     env = { "CMZ_WEBSITE_PATH" : os.getcwd() }
     env.update(os.environ)
-    manage_path = os.path.abspath("manage.py")
-
-
-    subprocess.call([manage_path] + sys.argv[1:],
-        env=env,
-        #stdout=subprocess.PIPE,
-    )
+    from django.core.management import execute_from_command_line
+    execute_from_command_line(sys.argv)

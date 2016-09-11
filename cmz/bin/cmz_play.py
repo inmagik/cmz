@@ -6,16 +6,11 @@ import subprocess
 if __name__ == "__main__":
     env = { "CMZ_WEBSITE_PATH" : os.getcwd() }
     env.update(os.environ)
-    manage_path = os.path.abspath("manage.py")
+    #manage_path = os.path.abspath("manage.py")
 
     print ">>>" * 4 + " WELCOME TO CMZ!"
 
-    subprocess.call([manage_path, "migrate"],
-        env=env,
-        #stdout=subprocess.PIPE,
-    )
+    from django.core.management import execute_from_command_line
 
-    subprocess.call([manage_path, "runserver"] + sys.argv[1:],
-        env=env,
-        #stdout=subprocess.PIPE,
-    )
+    execute_from_command_line(["migrate"])
+    execute_from_command_line(["runserver"] + sys.argv)
