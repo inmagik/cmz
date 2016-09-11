@@ -8,10 +8,8 @@ if __name__ == "__main__":
     env.update(os.environ)
     manage_path = "manage.py"
 
-    
-    subprocess.call([manage_path] + sys.argv[1:], 
+
+    subprocess.call([manage_path] + sys.argv[1:],
         env=env,
         #stdout=subprocess.PIPE,
     )
-
-    

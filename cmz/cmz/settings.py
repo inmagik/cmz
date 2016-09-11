@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import sys
+import logging
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,8 +43,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Importing modules declared for current website
-from website.settings import *
+try:
+    # Importing modules declared for current website
+    from website.settings import *
+except:
+    logger.warning('NO WEBSITE SETTINGS USED')
 
 
 # Application definition
@@ -61,7 +68,11 @@ INSTALLED_APPS = [
 
 ]
 
-INSTALLED_APPS += SITE_MODULES
+try:
+    INSTALLED_APPS += SITE_MODULES
+except:
+    logger.warning('NO SITE_MODULES_FOUND')
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
