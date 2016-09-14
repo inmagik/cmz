@@ -7,11 +7,20 @@ if __name__ == "__main__":
     env = { "CMZ_WEBSITE_PATH" : os.getcwd() }
     env.update(os.environ)
     #manage_path = os.path.abspath("manage.py")
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cmz.settings")
+    #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cmz.settings")
 
     print ">>>" * 4 + " WELCOME TO CMZ!"
 
-    from django.core.management import execute_from_command_line
+    manage_path = os.path.abspath(os.path.dirname(__file__), "cmz_manage.py")
 
-    execute_from_command_line(["migrate"])
-    execute_from_command_line(["runserver"] + sys.argv)
+    print ">>>" * 4 + " WELCOME TO CMZ!"
+
+    subprocess.call([manage_path, "migrate"],
+        env=env,
+        #stdout=subprocess.PIPE,
+    )
+
+    subprocess.call([manage_path, "runserver"] + sys.argv[1:],
+        env=env,
+        #stdout=subprocess.PIPE,
+    )
