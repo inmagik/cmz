@@ -62,8 +62,6 @@ INSTALLED_APPS = [
 
     'sekizai',
     'activelink',
-    'django_medusa',
-
     'cms_core',
 
 ]
@@ -169,15 +167,6 @@ STATICFILES_DIRS = [
 ]
 
 
-##medusa
-#TODO: REMOVE ME!
-MEDUSA_RENDERER_CLASS = "django_medusa.renderers.DiskStaticSiteRenderer"
-MEDUSA_MULTITHREAD = False
-MEDUSA_DEPLOY_DIR = os.path.join(
-    WEBSITE_PATH,
-    'build',
-    'html'
-)
 
 # importing cmz pages
 from website.pages import SITE_PAGES
