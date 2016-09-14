@@ -7,6 +7,7 @@ if __name__ == "__main__":
     env = { "CMZ_WEBSITE_PATH" : os.getcwd() }
     env.update(os.environ)
     #manage_path = os.path.abspath("manage.py")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cmz.settings")
 
     print ">>>" * 4 + " WELCOME TO CMZ!"
 
