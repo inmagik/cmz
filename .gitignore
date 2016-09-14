@@ -9,6 +9,9 @@ __pycache__/
 *.db
 *.db3
 
+#our stuff
+experiments/
+
 # C extensions
 *.so
 
