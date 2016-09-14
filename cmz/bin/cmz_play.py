@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     print ">>>" * 4 + " WELCOME TO CMZ!"
 
-    manage_path = os.path.abspath(os.path.dirname(__file__), "cmz_manage.py")
+    manage_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "cmz_manage.py"))
 
     print ">>>" * 4 + " WELCOME TO CMZ!"
 
