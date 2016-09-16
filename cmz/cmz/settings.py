@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'activelink',
     'cms_core',
 
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_rest_admin',
 ]
 
 try:
