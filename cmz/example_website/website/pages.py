@@ -1,7 +1,7 @@
 #TEMPLATES WILL BE INFERRED BY NAMES
 
 SITE_PAGES = {
-    
+
     'home' : {
         'url' : '',
     },
@@ -13,7 +13,7 @@ SITE_PAGES = {
     'contact' : {
         'url' : 'contact',
     },
-    
+
     # 'items' : {
     #     'url' : 'items',
     #     'extra_modules' : []
@@ -21,9 +21,9 @@ SITE_PAGES = {
 
     # 'item-detail' : {
     #     'url' : 'items/(?P<pk>\w+)',
-        
+
     # },
 
-    
+
 
 }
