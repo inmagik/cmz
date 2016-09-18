@@ -9,8 +9,6 @@ def cms_text_content(key, max_len=None):
     try:
         content = TextContent.objects.get(key=key)
         return {'content': content, 'key': key}
-    
+
     except TextContent.DoesNotExist:
         return { 'content': None, 'key': key }
-
-    
