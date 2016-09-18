@@ -16,7 +16,9 @@ def create_urls(pages):
             comp_url = r'^$'
 
         u = url(comp_url, CmsView.as_view(
-                page_name=page_name, extra_modules=extra_modules
+                page_name=page_name,
+                extra_modules=extra_modules,
+                template=page.get('template', None)
             ), name=page_name
         )
 
