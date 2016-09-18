@@ -24,6 +24,7 @@ WEBSITE_PATH = os.getenv("CMZ_WEBSITE_PATH")
 
 #THIS IS FOR STATIC RENDERING
 CMZ_STATIC_PATH = os.getenv("CMZ_STATIC_PATH")
+        
 
 #TODO: REMOVE ME! THIS IS FOR EARLY DEVELOPMENT STAGE
 if not WEBSITE_PATH:
@@ -169,11 +170,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, WEBSITE_PATH, 'website', 'static'),
 ]
 
-
-
 # importing cmz pages
-from website.pages import SITE_PAGES
-
+try:
+    from website.pages import SITE_PAGES
+except:
+    logger.warning('NO webiste.pages found. NO PAGES WILL BE MOUNTED!!')
 
 # settings import hook (for server config, etc)
 try:

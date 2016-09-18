@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#cmz-admin build stuff 
+cmz-admin/ng2-admin/src/app/pages/symlinks/
+cmz-admin/ng2-admin/src/cmz-modules.json
+
 #sqlite stuff - commonly used db extensions
 *.sqlite
 *.sqlite3

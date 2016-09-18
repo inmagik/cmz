@@ -3,3 +3,4 @@ recursive-include cmz/cms_news *.*
 recursive-include cmz/cms_theme_bootstrap *.*
 recursive-include cmz/cms_cookieconsent *.*
 recursive-include cmz/example_website *.*
+recursive-include cmz.admin *.*
