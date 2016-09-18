@@ -24,7 +24,7 @@ WEBSITE_PATH = os.getenv("CMZ_WEBSITE_PATH")
 
 #THIS IS FOR STATIC RENDERING
 CMZ_STATIC_PATH = os.getenv("CMZ_STATIC_PATH")
-        
+
 
 #TODO: REMOVE ME! THIS IS FOR EARLY DEVELOPMENT STAGE
 if not WEBSITE_PATH:
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
     'sekizai',
     'activelink',
     'cms_core',
@@ -79,6 +80,7 @@ except:
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -181,3 +183,5 @@ try:
     from deploy_settings import *
 except ImportError:
     pass
+
+CORS_ORIGIN_ALLOW_ALL = True
