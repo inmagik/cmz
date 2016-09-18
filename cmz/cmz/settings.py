@@ -59,6 +59,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+#SOLID_I18N_USE_REDIRECTS = True
+
 
 try:
     # Importing modules declared for current website
@@ -78,6 +80,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'corsheaders',
+    'hvad',
     'sekizai',
     'activelink',
     'cms_core',

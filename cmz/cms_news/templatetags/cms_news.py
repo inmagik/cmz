@@ -8,6 +8,4 @@ def cms_news_list(context, num_items=10):
     page = context['request'].GET.get('page', 1);
     page = int(page)
     #todo: add num pages, total items..
-    return News.objects.all()[(page-1)*num_items:num_items]
-
-    
+    return News.objects.language().all()[(page-1)*num_items:num_items]
