@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from solid_i18n.urls import solid_i18n_patterns
 
-urlpatterns = [
+urlpatterns = solid_i18n_patterns('',
     url(r'^admin/', admin.site.urls),
     url(r'^rest_admin/', include('django_rest_admin.urls')),
     url(r'', include('cms_core.urls')),
-]
+)

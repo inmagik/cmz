@@ -3,15 +3,15 @@
 # Languages: tuples with code/name and options
 # FIRST ONE IS THE BASE ONE
 
-SITE_LANGUAGES = [
-    
-    ('it', 'Italiano', {}),
-    ('en', 'English', {}),
-
+LANGUAGES = [
+    ('it', 'Italiano'),
+    ('en', 'English'),
 ]
 
+LANGUAGE_CODE = 'it'
 
-LANGUAGE_SELECTORS = ['prefix'] # 'query_string', 'cookie', 'header', ...
+
+#LANGUAGE_SELECTORS = ['prefix'] # 'query_string', 'cookie', 'header', ...
 
 
 SITE_MODULES = [
