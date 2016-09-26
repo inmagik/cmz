@@ -30,7 +30,7 @@ CMZ_STATIC_PATH = os.getenv("CMZ_STATIC_PATH")
 if not WEBSITE_PATH:
     WEBSITE_PATH = os.path.join(BASE_DIR, "example_website")
 
-sys.path.append(WEBSITE_PATH)
+sys.path.insert(1, WEBSITE_PATH)
 
 
 # Quick-start development settings - unsuitable for production
