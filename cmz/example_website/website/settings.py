@@ -16,6 +16,7 @@ LANGUAGE_CODE = 'it'
 
 SITE_MODULES = [
     'cms_theme_bootstrap',
+    'cmz_translations',
     'cms_content',
     'cms_news',
     'cms_cookieconsent'
