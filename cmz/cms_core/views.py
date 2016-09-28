@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
+from django.utils import translation
 # Create your views here.
 
 class CmsView(TemplateView):
@@ -23,5 +24,14 @@ class CmsView(TemplateView):
 
     def get_template_names(self):
         if self.template:
-            return [ self.template ]
-        return [ "%s.html" % self.page_name, ]
+            name = self.template
+        else:
+            name = "%s.html" % self.page_name
+
+        lang = translation.get_language()
+        if name.endswith(".html"):
+            translated_name = name.replace(".html", ".%s.html" % lang)
+        else:
+            translated_name = name + ".%s" % lang
+
+        return [ translated_name, name ]
