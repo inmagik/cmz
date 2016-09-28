@@ -12,3 +12,8 @@ class TranslatedText(TranslatableModel):
     translations = TranslatedFields(
         body = models.TextField()
     )
+
+    def __unicode__(self):
+        if not self.context:
+            return self.label
+        return '%s [%s]' % (self.label, self.context)
