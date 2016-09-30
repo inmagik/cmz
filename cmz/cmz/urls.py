@@ -22,3 +22,9 @@ urlpatterns = solid_i18n_patterns('',
     url(r'^rest_admin/', include('django_rest_admin.urls')),
     url(r'', include('cms_core.urls')),
 )
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

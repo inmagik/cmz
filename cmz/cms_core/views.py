@@ -35,3 +35,9 @@ class CmsView(TemplateView):
             translated_name = name + ".%s" % lang
 
         return [ translated_name, name ]
+
+
+    def get_context_data(self, **kwargs):
+        ctx = super(CmsView, self).get_context_data(**kwargs)
+        ctx['view_kwargs'] = self.kwargs
+        return ctx

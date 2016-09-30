@@ -179,6 +179,14 @@ STATIC_ROOT = os.path.abspath(os.path.join(
     'static',
 ))
 
+MEDIA_URL = '/media/'
+CMZ_MEDIA_ROOT = os.getenv("CMZ_MEDIA_ROOT")
+DEFAULT_MEDIA_ROOT = os.path.abspath(os.path.join(
+    WEBSITE_PATH,
+    'media',
+))
+MEDIA_ROOT = CMZ_MEDIA_ROOT or DEFAULT_MEDIA_ROOT
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, WEBSITE_PATH, 'website', 'static'),
 ]
