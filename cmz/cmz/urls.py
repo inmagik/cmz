@@ -17,11 +17,26 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from solid_i18n.urls import solid_i18n_patterns
 
-urlpatterns = solid_i18n_patterns('',
+
+patterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rest_admin/', include('django_rest_admin.urls')),
     url(r'', include('cms_core.urls')),
-)
+]
+
+try:
+    # Importing modules declared for current website
+    import website.urls
+    patterns += [
+        url(r'', include('website.urls'))
+    ]
+except:
+    raise
+
+
+urlpatterns = solid_i18n_patterns('', *patterns)
+
+
 
 from django.conf import settings
 from django.conf.urls.static import static
