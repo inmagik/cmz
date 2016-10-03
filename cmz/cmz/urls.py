@@ -20,7 +20,7 @@ from solid_i18n.urls import solid_i18n_patterns
 
 patterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^rest_admin/', include('django_rest_admin.urls')),
+    url(r'^api/', include('django_rest_admin.urls')),
     url(r'', include('cms_core.urls')),
 ]
 
