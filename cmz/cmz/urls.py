@@ -21,6 +21,7 @@ from solid_i18n.urls import solid_i18n_patterns
 patterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('django_rest_admin.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'', include('cms_core.urls')),
 ]
 

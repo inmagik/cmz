@@ -201,7 +201,7 @@ except:
 
 # settings import hook (for server config, etc)
 try:
-    from deploy_settings import *
+    from website.deploy_settings import *
 except ImportError:
     pass
 
