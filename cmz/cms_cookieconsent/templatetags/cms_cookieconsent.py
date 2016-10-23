@@ -12,7 +12,6 @@ if type(COOKIECONSENT_OPTIONS) != dict:
 if 'link' in COOKIECONSENT_OPTIONS and not COOKIECONSENT_OPTIONS['link'].startswith("/"):
     try:
         COOKIECONSENT_OPTIONS['link'] = reverse(COOKIECONSENT_OPTIONS['link'])
-        print COOKIECONSENT_OPTIONS['link']
     except NoReverseMatch:
         pass
 

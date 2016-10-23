@@ -5,7 +5,6 @@ from django.conf import settings
 urlpatterns = []
 
 
-
 SITE_PAGES = getattr(settings, 'SITE_PAGES')
 
 urlpatterns += create_urls(SITE_PAGES)

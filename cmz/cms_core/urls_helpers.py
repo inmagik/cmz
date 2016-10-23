@@ -10,17 +10,25 @@ def create_urls(pages):
 
         page = pages[page_name]
         extra_modules = page.get('extra_modules', [])
-        if page['url']:
+
+        if 'url' in page and page['url']:
             comp_url = r'^%s/$' % page['url']
         else:
             comp_url = r'^$'
 
-        u = url(comp_url, CmsView.as_view(
-                page_name=page_name,
-                extra_modules=extra_modules,
-                template=page.get('template', None)
-            ), name=page_name
-        )
+        if 'view' not in page:
+            #standard cms view
+            u = url(comp_url, CmsView.as_view(
+                    page_name=page_name,
+                    extra_modules=extra_modules,
+                    template=page.get('template', None)
+                ), name=page_name
+            )
+
+        else:
+            view = page['view']
+            view_params = page.get("view_parms", {})
+            u = url(comp_url, view, view_parms, name=page_name)
 
         if page['url']:
             out.append(u)
