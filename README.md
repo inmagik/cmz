@@ -1,7 +1,16 @@
 # cmz
-Our kick-ass django based cms.
 
-## Install 
+## What's this?
+Our kick-ass django based cms. Made for designers.
+
+
+Some features:
+
+* Markup and modules setup live on the filesystem
+* Content lives in database
+
+
+## Install
 
 Grab this repo or install from github.
 
@@ -24,3 +33,14 @@ And run it locally:
 ```
 cmz_play.py [port]
 ```
+
+
+## Sites
+
+Here's a list of sites made with cmz:
+
+* [inmagik webiste](https://www.inmagik.com/)
+
+
+## Maintenance and support
+This project is maintained by [INMAGIK](https://www.inmagik.com).
